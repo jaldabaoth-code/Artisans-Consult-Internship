@@ -1,0 +1,77 @@
+@use "sass:math";
+
+@import 'variables';
+
+.contenti {
+    @media screen and (max-width: 992px) {
+       bottom: 60px;
+    }
+
+    header {
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        .comment {
+            width: 50%;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.438);
+            span {
+                font-size: 35px;
+                font-weight: 300;
+                letter-spacing: -2px;
+                padding-left: 8px;
+                color: white;
+            }
+        }
+    }
+
+    .hook {
+        width: 100%;
+        font-size: 24px;
+        font-weight: 300;
+        padding-left: 8px;
+        letter-spacing: -2px;
+        text-align: left;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .achievmentTitle {
+        height: 27px;
+        width: 100%;
+        background: $secondary;
+        span {
+            color: $warning;
+            text-align: center;
+            font-size: 23px;
+            vertical-align:middle;
+        }
+    }
+
+    .achievmentDescription {
+        height: auto;
+        font-size: 20px;
+        padding: 8px !important;
+    }
+
+    .fa-caret-left, .fa-caret-right {
+        color: $warning !important;
+        font-size: 50px;
+    }
+
+    .picture {
+        width: 45%;
+    }
+
+    .carousel-control-prev {
+        justify-content: flex-start !important;
+    }
+
+    .carousel-control-next {
+        justify-content: flex-end !important;
+    }
+
+}

@@ -1,0 +1,117 @@
+@import 'variables.scss';
+@import "~bootstrap/scss/bootstrap";
+
+
+html {
+    width: 98vw !important;
+    height: 100% !important;
+    @media screen and (max-width: 992px) {
+        width: 100vw !important;
+    }
+}
+
+
+body {
+    background-color: $white;
+    color: $dark;
+    width: 98vw !important;
+    height: 100% !important;
+    font-family: $title-font;
+    font-size: 18px;
+
+    .bod{
+        height: 100% !important;
+        margin-left: 12px;
+        margin-right: 10px;
+        margin-top: 138px;
+        right: 0px;
+        z-index: 10;
+        .left {
+            position: fixed;
+            color: $dark;
+            font-family: $title-font;
+            font-size: 14px;
+            width: $left_grey_width;
+            height: 765px;
+            padding-left: 15px;
+            padding-right: 10px;
+            padding-top: 8px;
+            background-color: $white !important;
+    
+            @media screen and (max-width: 992px) {
+                display: none;
+            }
+            
+            p {
+                width: 100%;
+                line-height: 26px;
+            }
+
+            .orange {
+                height: 27px;
+                width: 27px;
+                background-color: $warning;
+                position: fixed;
+                left: 177px;
+                bottom: 8px;
+            }
+        }
+    
+        .contenti {
+            position: absolute;
+            left: 207px;
+            right: 74px;
+            width: auto;
+            height: auto;
+            background-color: $white !important;
+            margin-left: 8px;
+            margin-right: 10px;
+            padding: 8px;
+
+            @media screen and (max-width: 992px) {
+                position: relative;
+                left: auto;
+                right: auto;
+            }
+
+            .blanks {
+                height: 30px;
+                background-color: white;
+
+                @media screen and (max-width: 992px) {
+                    height: 60px;
+                }
+            }
+        }
+
+        .righti {
+            width: $right_lightGrey_width !important;
+            background-color: $white !important;
+            height: 765px;
+            position: fixed;
+            right: 10px;
+            @media screen and (max-width: 992px) {
+                display: none;
+            }
+        } 
+    }
+}
+
+h1,
+h2 {
+    font-size: 20px;
+    font-family: $title-font;
+    font-weight: 400;
+    color: $warning !important;
+}
+
+h3 {
+    font-family: $title-font;
+    font-weight: 300;
+}
+
+p {
+    font-family: $title-font;
+    font-size: $font-size-p;
+}
+

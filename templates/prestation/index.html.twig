@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent()}} - Prestation}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('prestation') }}
+{% endblock %}
+
+{% block contenu %}
+    <header class="d-flex justify-content-center align-items-center flex-column">
+        <img src="{{ asset('build/images/slider-prestation.jpg') }}" alt="prestation header">
+        <div class="comment"><span>Un unique interlocuteur pour votre tranquilité.</span></div>
+    </header>
+    <section id="prestation">
+        <span class="hook">
+            Vous ne savez pas comment gérer vos travaux? Pour vous, nous avons sélectionné des artisans compétents et réactifs. 
+        </span>
+        <div class="description">
+            <div class="paragraph">
+                <p>Parce qu'il est important de savoir sur qui compter, nous vous proposons une sélection d’artisans spécialisés, à votre service. Toutes les entreprises sélectionnées par Artisans Consult ont été contrôlées et choisies pour la qualité de leur travail et leur savoir-faire.</p>
+                <br>
+                <img src="{{ asset('build/images/planete_prestation.png') }}" alt="planet valeurs">
+                <p>Fort de notre expérience dans les métiers du bâtiment, nous sommes votre unique interlocuteur pour votre tranquillité. Le sérieux de notre engagement vous permet de gagner du temps et vous vivez vos travaux sereinement.</p>
+                <br>
+                <span>Sans frais et sans engagement de votre part.</span>
+            </div>
+            <div class="graphic">
+                <p>Durant votre projet, nous vous accompagnons à chaque étape. Il est essentiel d'être présent à vos cotés afin de pouvoir vous conseiller et vous guider dans vos travaux.</p>
+                <br>
+                <img src="{{ asset('build/images/schemaprestations.gif') }}" alt="schéma prestation">
+            </div>
+        </div>
+    </section>
+{% endblock %}

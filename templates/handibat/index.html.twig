@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent()}} - Handibat{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('handibat') }}
+{% endblock %}
+
+{% block contenu %}
+    {{ parent() }}
+    <header class="d-flex justify-content-center align-items-center flex-column">
+        <img src="{{ asset('build/images/slider-handibat.jpg') }}" alt="quality header">
+        <div class="comment"><span>La qualité et le savoir faire d'HANDIBAT®</span></div>
+    </header>
+    <section id="handibat">
+        <span class="hook">
+            HANDIBAT® apporte une information fiable et objective sur les compétences des professionnels du bâtiment engagés dans une démarche qualité auprès de leurs clients.
+        </span>
+        <div class="description">
+            <div class="paragraph">
+                <span>
+                    Au travers de cette charte, le professionnel HANDIBAT® s’engage à vous apporter une réponse sur-mesure qui respecte la réglementation, qui prend en compte la continuité de la chaîne de déplacement tout en veillant à une bonne qualité de service (respect des délais, clarté du devis…).
+                </span>
+                <br>
+                <img src="{{ asset('build/images/logo_handibat.jpg') }}" alt="logo handibat">
+            </div>
+            <div class="liste">
+                <span>
+                    Les professionnels du bâtiment s’engagent, vis à vis de leurs clients, à respecter la Charte HANDIBAT®, qui comporte trois engagements déclinés en neuf exigences :
+                </span>
+                <ul>
+                    <li>
+                        <span class="boldOne">La compétence</span>
+                        <ul>
+                            <li><span>Justifier de la compétence d’un représentant ou d’un salarié de l’entreprise</span></li>
+                            <li><span>Identifier les possibilités d’adaptabilité du bâti</span></li>
+                            <li><span>Suivre les évolutions techniques et connaître les dispositifs réglementaires dans les domaines de l’accessibilité et de l’adaptabilité du bâti</span></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="boldOne">Le conseil</span>
+                        <ul>
+                            <li><span>Informer le client sur la réglementation et les possibilités de financement des travaux</span></li>
+                            <li><span>Proposer et réaliser, dans son corps de métier, des travaux sur mesure en considération des besoins du client et dans le respect de la réglementation en vigueur</span></li>
+                            <li><span>Orienter, en fonction de ses compétences et de la nature du projet, le client vers d’autres professionnels pour définir au mieux les travaux et aménagements</span></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="boldOne">Le service</span>
+                        <ul>
+                            <li><span>Donner suite rapidement dès le premier contact avec le client</span></li>
+                            <li><span>Fournir un devis clair et détaillé dans un délai convenu avec le client</span></li>
+                            <li><span>Respecter les clauses du devis</span></li>
+                        </ul>
+                    </li>
+                </ul>
+                <span>
+                    Au travers de cette Charte, le professionnel HANDIBAT® s’engage à vous apporter une réponse sur-mesure qui respecte la réglementation, qui prend en compte la continuité de la chaîne de déplacement tout en veillant à une bonne qualité de service (respect des délais, clarté du devis…).
+                </span>
+                <span class="boldOne">
+                    Les professionnels HANDIBAT® ont décidé de penser leur métier selon une approche différente, déontologique. N’hésitez plus, faites appel à un professionnel HANDIBAT® !
+                </span>
+            </div>
+        </div>
+    </section>
+{% endblock %}

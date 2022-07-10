@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - Réalisations{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('achievment') }}
+{% endblock %}
+
+{% block contenu %}
+    {{ parent() }}
+    <header class="d-flex justify-content-center align-items-center flex-column">
+        <video muted autoplay loop class="video d-flex col-12 w-50">
+            <source src="{{ asset('build/images/achievment_video.webm') }}" type="video/webm">
+            Sorry, your browser doesn't support embedded videos.
+        </video>
+    </header>
+    <section id="achievment">
+        <span class="hook">Découvrez différentes réalisations avec des photos avant et après les travaux de rénovation et/ou d'extension.</span>
+        {% for achievment in achievments %}
+        <div id="carouselExampleControls-{{ achievment.id }}" class="carousel slide col-12 mb-3 border" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="presentation">
+                    <div class="achievmentTitle d-flex justify-content-center align-items-center"><span>{{  achievment.title }}</span></div>
+                    <div class="achievmentDescription p-1 m-b-3">{{ achievment.description | raw }}</div>
+                </div>
+                {% set test = 1 %}
+                {% for picture in pictures %}
+                    {% if achievment.id is same as picture.achievment.id %}
+                        <div class="carousel-item {{ test == 1 ? 'active' : '' }} pt-1">
+                            <div class="d-flex flex-lg-row justify-content-center">
+                                <img src="{{ asset('images/imageBeforeFile/' ~ picture.imageBefore) }}" class="d-block picture" alt="...">
+                                <img src="{{ asset('build/images/separator.jpg')}}" class="d-block pictureSeparator" alt="...">
+                                <img src="{{ asset('images/imageAfterFile/' ~ picture.imageAfter) }}" class="d-block picture" alt="...">
+                            </div>
+                        </div>
+                        {% set test = test + 1 %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls-{{ achievment.id }}" data-bs-slide="prev">
+                <span><i class="fas fa-caret-left"></i></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls-{{ achievment.id }}" data-bs-slide="next">
+                <span><i class="fas fa-caret-right"></i></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        {% endfor %}
+        {% if total > limit %}
+            <ul class="pagination justify-content-center">
+                {% set pages = (( total / limit) | round(0, 'ceil')) %}
+                <li class="page-item {{ (page == 1) ? 'disabled' : '' }}">
+                    <a class="page-link" href="?page=1">
+                        <i class="fas fa-step-backward"></i>
+                    </a>
+                </li>
+                <li class="page-item {{ (page == 1) ? 'disabled' : '' }}">
+                    <a class="page-link" href="{{ (page > 1) ? '?page=' ~ (page - 1) : '' }}">
+                        <i class="fas fa-angle-left"></i>
+                    </a>
+                </li>
+                {# affichage de la premiere item/page si la page actuel est loin (+2 pages) de la premiere page, sinon ne s'affiche pas #}
+                {% if page > 3 %}
+                    <li class="page-item {{ (page == 1) ? 'active' : '' }}">
+                        <a class="page-link" href="?page=1">1</a>
+                    </li>
+                {% endif %}
+                {# les ... s'affichent si la page actuel est loin (+3 pages) de la premiere page, les ... ont le lien vers la page actuel -3 page #}
+                {% if page > 4 %}
+                    <li class="page-item"><a class="page-link" href="?page={{ page - 3 }}">...</a></li>
+                {% endif %}
+                {# affichage des items de la page actuel, 2 pages/items avant et 2 pages/items apres #}
+                {% for item in page -2.. page + 2 %}
+                    {% if item > 0 and item <= pages %}
+                        <li class="page-item {{ (page == item) ? 'active' : '' }}">
+                            <a class="page-link" href="?page={{ item }}">{{ item }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+                {# les ... s'affichent si la page actuel est loin (+3 pages) de la derniere page, les ... ont le lien vers la page actuel +3 page #}
+                {% if page < pages - 3 %}
+                    <li class="page-item"><a class="page-link" href="?page={{ page + 3 }}">...</a></li>
+                {% endif %}
+                {# affichage du dernier item/page si la page actuel est loin (+2 pages) de la derniere page, sinon ne s'affiche pas #}
+                {% if page < pages - 2 %}
+                    <li class="page-item {{ (page == pages) ? 'active' : '' }}">
+                        <a class="page-link" href="?page={{ pages }}">{{ pages }}</a>
+                    </li>
+                {% endif %}   
+                <li class="page-item {{ (page == pages) ? 'disabled' : '' }}">
+                    <a class="page-link" href="{{ (page < pages) ? '?page=' ~ (page + 1) : '' }}">
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </li>
+                <li class="page-item {{ (page == pages) ? 'disabled' : '' }}">
+                    <a class="page-link" href="?page={{ pages }}">
+                        <i class="fas fa-step-forward"></i>
+                    </a>
+                </li>
+            </ul>
+        {% endif %}
+    </section>
+{% endblock %}

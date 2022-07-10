@@ -1,0 +1,93 @@
+@use "sass:math";
+
+@import 'variables';
+
+.contenti {
+    header {
+        img {
+            width: 100%;
+        }
+
+        .comment {
+            margin-top: -50px;
+            width: 100%;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.438);
+            span {
+                font-size: 35px;
+                letter-spacing: -2px;
+                padding-left: 8px;
+                color: white;
+            }
+        }
+    }
+
+    #handibat {
+        .hook {
+            width: 100%;
+            font-size: 21px;
+            font-weight: 300;
+            padding-left: 8px;
+            letter-spacing: -2px;
+            text-align: left;
+        }
+
+        .description {
+            display: grid;
+            margin-bottom: 8px;
+            padding: 8px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr;
+            grid-column-gap: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.125);
+
+            @media screen and (max-width: 992px) {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(2, 1fr);
+            }
+
+            .paragraph {
+                display: flex;
+                flex-direction: column;
+                grid-column-start: 1;
+                grid-column-end: 1;
+
+                img {
+                    align-self: center;
+                    margin-top: 48px;
+                    width: 41%;
+                }
+
+                @media screen and (max-width: 992px) {
+                    grid-row-start: 1;
+                }
+            }
+
+            .liste {
+                grid-column-start: 2;
+                grid-column-end: span 3;
+
+                @media screen and (max-width: 992px) {
+                    grid-row-start: 2;
+                    grid-column-end: 1;
+                }
+
+                .boldOne {
+                    font-weight: 700;
+                    margin-top: 8px;
+                }
+
+                display: flex;
+                flex-direction: column;
+                li {
+                    list-style: square;
+                    color: $warning;
+
+                    span {
+                        color: $dark;
+                    }
+                }
+            }
+        }
+    }
+}

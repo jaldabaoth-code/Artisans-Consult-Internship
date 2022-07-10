@@ -1,0 +1,1 @@
+rsync -av ./ u61679484@home353584939.1and1-data.host:~/artisansconsult  --exclude=deploy --exclude-from=.gitignore

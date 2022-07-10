@@ -1,0 +1,32 @@
+{% block footer %}
+	{% set currentPath = path(app.request.attributes.get('_route'),
+	app.request.attributes.get('_route_params')) %}
+	<div class="footer d-flex flex-row flex-nowrap">
+		<ul class="footer-items">
+			<li class="footer-item">
+				<a class="footer-link accueil" aria-current="page" href="{{ path('home') }}">Accueil</a>
+			</li>
+			<li class="footer-item">
+				<a class="footer-link prestations" aria-current="page" href="{{ path('prestation') }}">Prestations</a>
+			</li>
+			<li class="footer-item">
+				<a class="footer-link realisations" href="{{ path('achievment') }}">Réalisations</a>
+			</li>
+			<li class="footer-item">
+				<a class="footer-link infos" href="{{ path('partner') }}">Partenaires</a>
+			</li>
+			<li class="footer-item">
+				<a class="footer-link charte" href="{{ path('infos') }}">Infos&nbspUtiles</a>
+			</li>
+			<li class="footer-item">
+				<a class="footer-link infos {{ currentPath == '/handibat' ? 'active' : '' }}" href="{{ path('handibat') }}">Handibat</a>
+			</li>
+			<li class="footer-item">
+				<a class="footer-link contact" href="{{ path('contact') }}">Contact</a>
+			</li>
+			<li class="footer-item">
+				<a class="footer-link contact {{ currentPath == '/legal' ? 'active' : '' }}" href="{{ path('legal') }}">Mentions&nbspLégales</a>
+			</li>
+		</ul>
+	</div>
+{% endblock %}

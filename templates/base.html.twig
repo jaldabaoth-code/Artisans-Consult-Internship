@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="Description" content="Artisans consult courtier en travaux, demande de devis artisan, estimation travaux, trouver un artisan pour travaux de r&eacute;novation,
+        construction de maison, renover un appartement, travaux et r&eacute;novations batiment" />
+        <meta name="Keywords" content="batiment orleans, batiment loiret, batiment 45, construction maison orleans, construction maison loiret, construction maison 45, courtage orleans, courtage loiret, courtage 45,
+        renover une maison orleans, renover une maison loiret, renover une maison 45, travaux de maison orleans, travaux de maison loiret, travaux de maison 45, travaux de r&eacute;novation orleans, travaux de r&eacute;novation loiret,
+        travaux de r&eacute;novation 45, traveaux orleans, traveaux loiret, traveaux 45, travaux b&acirc;timent orleans, travaux b&acirc;timent loiret, travaux b&acirc;timent 45, r&eacute;novation appartement orleans, r&eacute;novation appartement loiret,
+        r&eacute;novation appartement 45, entreprise renovation orleans,entreprise renovation loiret, entreprise renovation 45, demande de devis orleans, demande de devis loiret, demande de devis 45, courtier travaux orleans,
+        courtier travaux loiret,courtier travaux 45, courtage en travaux orleans, courtage en travaux loiret, courtage en travaux 45, artisan orleans"/>
+        <link rel="icon" type="image/gif" href="{{ asset('build/images/iconAC.gif') }}"/>
+        <title>{% block title %}Artisansconsult{% endblock %}</title>
+        {% block stylesheets %}
+        	{{ encore_entry_link_tags('app') }}
+            {{ encore_entry_link_tags('navbar') }}
+            {{ encore_entry_link_tags('footer') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+            <script src="https://kit.fontawesome.com/365f79b953.js" crossorigin="anonymous"></script>
+        {% endblock %}
+    </head>
+    <body>
+        {% block navbar %}
+            {% include "includes/_navbar.html.twig" %}
+        {% endblock %}
+        <div class="d-flex flex-row bod">
+            {% include "includes/_left.html.twig" %}
+            <div class="contenti">
+                {% block contenu %}
+                {% endblock %}
+                <div class="blanks">&nbsp</div>
+            </div>
+            {% include "includes/_right.html.twig" %}
+            {% block footer %}
+                {% include "includes/_footer.html.twig" %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

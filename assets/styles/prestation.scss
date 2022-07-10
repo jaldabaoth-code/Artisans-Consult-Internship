@@ -1,0 +1,101 @@
+@use "sass:math";
+
+@import 'variables';
+
+.contenti {
+    header {
+
+        img {
+            width: 100%;
+        }
+
+        .comment {
+            margin-top: -50px;
+            width: 100%;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.438);
+            span {
+                font-size: 35px;
+                font-weight: 300;
+                letter-spacing: -2px;
+                padding-left: 8px;
+                color: white;
+            }
+        }
+    }
+
+    #prestation {
+        display: flex;
+        flex-direction: column;
+
+        .hook {
+            width: 100%;
+            font-size: 24px;
+            font-weight: 300;
+            padding-left: 8px;
+            letter-spacing: -2px;
+            text-align: left;
+        }
+
+        .description {
+            display: grid;
+            margin-bottom: 8px;
+            padding: 8px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr;
+            grid-column-gap: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.125);
+
+            @media screen and (max-width: 992px) {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(2, 1fr);
+            }
+
+            .paragraph {
+                display: flex;
+                flex-direction: column;
+                grid-column-start: 1;
+                grid-column-end: 1;
+
+                img {
+                    margin-top: -45px;
+                    width: 60%;
+                    align-self: center;
+                }
+
+                @media screen and (max-width: 992px) {
+                    grid-row-start: 1;
+                }
+
+                span {
+                    display: flex;
+                    flex-direction: row-reverse;
+                    justify-items: self-end;
+                    color: $warning;
+                    font-style: italic;
+                }
+            }
+
+            .graphic {
+                grid-column-start: 2;
+                grid-column-end: span 3;
+
+                @media screen and (max-width: 992px) {
+                    grid-row-start: 2;
+                    grid-column-end: 1;
+                }
+
+                display: flex;
+                flex-direction: column;
+
+                img {
+                    margin-top: 18px !important;
+                    align-self: center;
+                    width: 68%;
+                }
+            }
+        }
+    }
+
+
+}

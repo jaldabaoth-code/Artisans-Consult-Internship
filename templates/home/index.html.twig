@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent()}} - Accueil{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('home') }}
+{% endblock %}
+
+{% block contenu %}
+    <header class="d-flex justify-content-center align-items-center flex-column">
+        <img src="{{ asset('build/images/home-header.jpg') }}" alt="home header">
+        <div class="comment home"><span>Particulier ou professionnel, vous souhaitez réaliser des travaux dans votre habitation ou vos locaux professionnels ?</span></div>
+        <span class="hook">Nous sélectionnons pour vous les meilleurs artisans au meilleur prix.</span>
+    </header>
+    <section id="home">
+        <div class="cardContainer">
+            <div class="card">
+                <a href="{{ path('prestation') }}">
+                    <div class="card-header prestation">
+                        <div class="card-title"><span>Nos&nbspPréstations</span></div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Fort de notre expérience dans les métiers du bâtiment, nous sommes votre unique interlocuteur pour votre tranquilité.
+                        </p>
+                        <div class="coloredSquare"></div>
+                    </div>
+                </a>
+            </div>
+            <div class="card">
+                <a href="{{ path('achievment') }}">
+                    <div class="card-header achievment">
+                        <div class="card-title"><span>Nos&nbspréalisations</span></div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Le sérieux de notre engagement vous permet de gagner du temps et vous vivez vos travaux plus sereinement.
+                        </p>
+                        <div class="coloredSquare"></div>
+                    </div>
+                </a>
+            </div>
+            <div class="card">
+                <a href="{{ path('partner') }}">
+                    <div class="card-header partner">
+                        <div class="card-title"><span>Nos&nbspPartenaires</span></div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Tous nos partenaires affiliés
+                        </p>
+                        <div class="coloredSquare"></div>
+                    </div>
+                </a>
+            </div>
+            <div class="card">
+                <a href="handibat">
+                    <div class="card-header handibat">
+                        <div class="card-title"><span>La&nbspqualité&nbspd'HANDIBAT®</span></div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Faire appel à un professionnel HANDIBAT&reg;, c'est solliciter un réseau d'acteurs aux compétences variées et complémentaires en matière d'accessibilité.
+                        </p>
+                        <div class="coloredSquare"></div>
+                    </div>
+                </a>
+            </div>
+            <div class="card">
+                <a href="infos">
+                    <div class="card-header infos">
+                        <div class="card-title"><span>Infos&nbspUtiles</span></div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Les informations pratiques pour vous aider dans vos démarches.
+                        </p>
+                        <div class="coloredSquare"></div>
+                    </div>
+                </a>
+            </div>
+            <div class="card">
+                <a href="{{ path('contact') }}">
+                    <div class="card-header contact">
+                        <div class="card-title"><span>Contact</span></div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            N'hésitez pas, contactez-nous !
+                        </p>
+                        <div class="coloredSquare"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

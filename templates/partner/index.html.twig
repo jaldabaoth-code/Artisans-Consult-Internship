@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent()}} - Partenaires{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('partner') }}
+{% endblock %}
+
+{% block contenu %}
+    <header class="d-flex justify-content-center align-items-center flex-column">
+        <img src="{{ asset('build/images/slider-partenaires.jpg') }}" alt="partner header">
+        <div class="comment"><span>Entre vous et nous, une relation de confiance.</span></div>
+    </header>
+    <section id="partner">
+        <span class="hook">
+            Artisans Consult s'entoure des meilleurs partenaires pour vous apporter un service de qualité.
+        </span>
+        <div class="description">
+            <div class="paragraph">
+                <br>
+                <img src="{{ asset('build/images/brique_partner.jpeg') }}" alt="logo">
+            </div>
+            <div class="liste">
+                <ul>
+                    {% for partner in partners %}
+                        <li class="titleLi">
+                            <img src="{{ asset('images/logoFiles/' ~ partner.logo) }}" alt="logo">
+                            <span class="boldOne">{{ partner.name }}</span>
+                            (<a href="{{ partner.link }}" target="_blank">>site</a>)
+                            <div class="partnerDescription">
+                                {{ partner.description | raw }}
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+{% endblock %}

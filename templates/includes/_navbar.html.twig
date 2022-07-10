@@ -1,0 +1,41 @@
+<div class="blank"></div>
+{% set currentPath = path(app.request.attributes.get('_route'),
+  app.request.attributes.get('_route_params')) %}
+<nav class="navbar navbar-expand-lg mt-0 mb-0 p-0">
+    <div class="container-fluid d-flex flex-column">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="fas fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item greyBar">
+                    <a class="nav-link grey p-0"></a>
+                </li>
+                <div class="nav-items">
+                    <li class="nav-item">
+                        <a class="nav-link {{ currentPath == '/' ? 'active' : '' }} m-0 p-0" aria-current="page" href="{{ path('home') }}">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link m-0 p-0 {{ currentPath == '/prestation' ? 'active' : '' }}" href="{{ path('prestation') }}">Prestations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link m-0 p-0 {{ currentPath == '/realisations' ? 'active' : '' }}" href="{{ path('achievment') }}">Réalisations</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link m-0 p-0 {{ currentPath == '/partenaires' ? 'active' : '' }}" href="{{ path('partner') }}">Partenaires</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link m-0 p-0 {{ currentPath == '/infos' ? 'active' : '' }}" href="{{ path('infos') }}">Infos&nbspUtiles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link m-0 p-0 {{ currentPath == '/contact' ? 'active' : '' }}" href="{{ path('contact') }}">Contact</a>
+                    </li>
+                </div>
+                <li class="nav-item lightGreyBar">
+                    <a class="nav-link lightGrey p-0"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="greyNav">&nbsp</div>

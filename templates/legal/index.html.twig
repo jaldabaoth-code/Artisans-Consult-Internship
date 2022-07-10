@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent()}} - Mentions Légales{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('legal') }}
+{% endblock %}
+
+{% block contenu %}
+    {{ parent() }}
+    <header class="d-flex justify-content-center align-items-center flex-column">
+        <img src="{{ asset('build/images/home-header.jpg') }}" alt="quality header">
+        <div class="comment"><span>Artisans Consult</span></div>
+    </header>
+    <section id="handibat">
+        <span class="hook">
+            &nbsp
+        </span>
+        <div class="description">
+            <div class="paragraph">
+                <span class="orange">
+                    MENTIONS LÉGALES
+                </span>
+                <span>
+                    (réglementées par la Loi n° 2004-575 du 21 juin 2004 pour la confiance dans l’économie numérique)
+                </span>
+            </div>
+            <div class="liste">
+                <ul>
+                    <li>
+                        <span class="boldOne">ÉDITION</span><br>
+                        <span>Le site www.artisansconsult.fr est édité par Artisans Consult.
+                        47, rue des Plantes 45750 SAINT PRYVE SAINT MESMIN<br>
+                        N° SIRET 529 822 918 000 15</span>
+                    </li>
+                    <li>
+                        <span class="boldOne">HEBERGEMENT</span><br>
+                        <span>Le site internet est hebergé par la société 1&1 : <a href="www.1and1.fr" target="_blank">www.1and1.fr</a></span>
+                    </li>
+                    <li>
+                        <span class="boldOne">PROPRIÉTÉ INTELLECTUELLE</span><br>
+                        <span>L’ensemble de ce site relève de la législation française et internationale sur le droit d’auteur et la propriété intellectuelle. Toute représentation, reproduction, modification, utilisation commerciale, partielle ou totale, ainsi que tout transfert vers un autre site sont interdits, sauf autorisation à demander par courrier à Artisans Consult.</span>
+                    </li>
+                    <li>
+                        <span class="boldOne">INFORMATIQUE ET LIBERTE</span><br>
+                        <span>Les informations recueillies par le biais des formulaires font l’objet d’un traitement informatique exclusivement utilisées pour l’objet indiqué. Les informations ainsi recueillis sont exclusivement destinés à Artisans Consult.<br>
+                        Conformément à la loi « informatique et libertés » du 6 janvier 1978 modifiée en 2004, vous bénéficiez d’un droit d’accès, de rectification, de modification ou de suppression des informations qui vous concernent, que vous pouvez exercer en vous adressant exclusivement à Artisans Consult par voie postale à 47, rue des Plantes 45750 SAINT PRYVE SAINT MESMIN. Tout autre mode de transmission sera considéré comme nul et non avenu.<br>
+                        Déclaration CNIL n°1531680 et n°1531695.</span>
+                    </li>
+                    <li>
+                        <span class="boldOne">LIENS HYPERTEXTE</span><br>
+                        <span>Les liens hypertextes présents sur le site orientant les utilisateurs vers d’autres sites Internet n’engagent pas la responsabilité d'Artisans Consult quant au contenu de ces sites.<br>
+                        Toute personne physique ou morale souhaitant que soit établi un lien vers et à partir de notre site www.artisansconsult.fr doit préalablement en demander l’autorisation.</span>
+                    </li>
+                    <li>
+                        <span class="boldOne">CRÉATION ET RÉALISATION</span><br>
+                        <span>Tous droits réservés. Toute représentation et reproduction partielle ou intégrale sont interdites sans autorisation.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+{% endblock %}

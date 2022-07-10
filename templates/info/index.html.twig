@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent()}} - Infos Utiles{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('infos') }}
+{% endblock %}
+
+{% block contenu %}
+    <header class="d-flex justify-content-center align-items-center flex-column">
+        <img src="{{ asset('build/images/slider-infos.jpg') }}" alt="partner header">
+        <div class="comment"><span>Les informations pratiques pour vous aider dans vos démarches.</span></div>
+    </header>
+    <section id="infos">
+        <span class="hook">
+            Parce qu'il est important de bien préparer votre projet, retrouvez ici toutes les informations nécessaires pour vous aider et vous guider.
+        </span>
+        <div class="description">
+            <div class="paragraph">
+                <span>Pensez éco-énergie !</span><br>
+                Pour tous vos travaux, neuf et/ou rénovation, nous pouvons vous proposer nos artisans spécialisés pour vous conseiller dans votre choix énergétique.
+                <img src="{{ asset('build/images/image_infos.png') }}" alt="logo">
+            </div>
+            <div class="liste">
+                <ul>
+                    {% for partner in partners %}
+                        <li class="titleLi">
+                            <img src="{{ asset('images/logoFiles/' ~ partner.logo) }}" alt="logo">
+                            <span class="boldOne">{{ partner.name }}</span>
+                            (<a href="{{ partner.link }}" target="_blank">>site</a>)
+                            <div class="partnerDescription">
+                                {{ partner.description | raw }}
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+{% endblock %}

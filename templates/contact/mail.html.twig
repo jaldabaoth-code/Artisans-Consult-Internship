@@ -1,0 +1,53 @@
+{% for contac in contact %}
+    Nom : {{ contac.last_name }}
+    {{  contac.first_name }}
+    <br/>
+    {% if contac.type is not null %}
+        Société : {{ contac.company }}
+        <br/>
+    {% endif %}
+    Adresse : {{ contac.adress }}, {{ contac.postal_code }}, {{ contac.city }}
+    <br/>
+    Téléphone : {{ contac.telephone }}
+    <br/>
+    Email : {{ contac.email }}
+    <br/>
+    <hr>
+    {% if contac.type is not null or contac.age is not null %}
+        Le type de bien : 
+        {% if contac.type is not null  %}
+            {% if contac.type == "Autres"  %}
+                {{ contac.type }} : {{ contac.type_other }}
+            {% else %}
+                {{ contac.type }}
+            {% endif %}
+        {% endif %}
+        {% if contac.age is not null  %}
+            {% if contac.age == "Année de construction"  %}
+                {{ contac.age }} - {{ contac.age_other }}
+            {% else %}
+                {{ contac.age }}
+            {% endif %}
+        {% endif %} 
+        <br/>
+    {% endif %}
+    {% if contac.youare is not null %}
+        Je suis : {{ contac.youare }}
+        <br/>
+    {% endif %}
+    Message :
+    <br/>
+    {{ contac.message }}
+    <br/>
+    {% if contac.day is not null %}
+        Je voudrais etre contacté le : {{ contac.day }}
+    {% endif %}
+    {% if contac.known is not null %}
+        <hr>
+        {% if contac.known == "Autres"  %}
+            Je vous ai connu grâce au : {{ contac.known }} - {{ contac.known_other }}
+        {% else %}
+            Je vous ai connu grâce au : {{ contac.known }}
+        {% endif %}
+    {% endif %}
+{% endfor %}

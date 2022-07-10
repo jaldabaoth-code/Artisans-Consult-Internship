@@ -1,0 +1,20 @@
+<div classs="form-widget container">
+    <div class="d-flex flex-row justify-content-evenly">
+        <div class="d-flex flex-column col-lg-4">
+            <p class="text-center">Avant</p>
+        </div>
+        <div class="d-flex flex-column col-lg-4">
+            <p class="text-center ">Après</p>
+        </div>
+    </div>
+    {% for image in field.value %}
+        <div class="d-flex flex-row justify-content-evenly">
+            <div class="d-flex flex-column col-lg-4">
+                <img class="img-thumbnail col-lg-12" src="/images/imageBeforeFile/{{ image.imageBefore }}">
+            </div>
+            <div class="d-flex flex-column col-lg-4">
+                <img class="img-thumbnail col-lg-12" src="/images/imageAfterFile/{{ image.imageAfter }}">
+            </div>
+        </div>
+    {% endfor %}
+</div>

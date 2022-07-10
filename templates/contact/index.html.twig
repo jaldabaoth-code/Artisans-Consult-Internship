@@ -1,0 +1,250 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent()}} - Contact{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('contact') }}
+{% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags('contactjs') }}
+{% endblock %}
+
+{% block contenu %}
+    <header class="d-flex justify-content-center align-items-center flex-column">
+        <img src="{{ asset('build/images/slider-contact.jpg') }}" alt="contact header">
+        <div class="comment"><span>N'hésitez pas, contactez-nous !</span></div>
+    </header>
+    {% for category, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ category }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+    {{ form_start(formContact) }}
+        <h2 class="mt-4">Vos coordonnées ( * : champs obligatoires )</h2>
+        <div class="container form-container mb-5">
+            {{ form_errors(formContact.last_name) }} {{ form_errors(formContact.first_name) }}
+            <div class="d-flex field-container">
+                <div class="col-lg-6 col-12 d-flex justify-content-between field-label">
+                    {{ form_label(formContact.last_name, null,
+                        {label: 'Nom', 'label_attr': {'class': 'h6'}}) }}
+                    <div class="field-input-half">
+                        {{ form_widget(formContact.last_name,
+                            {'attr': {'class': 'field-input-half shadow-sm p-2 mb-1'}}) }}
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12 d-flex justify-content-between field-label ps-lg-5">
+                    {{ form_label(formContact.first_name, null,
+                        {label: 'Prénom', 'label_attr': {'class': 'h6'}}) }}
+                    <div class="field-input-half">
+                        {{ form_widget(formContact.first_name,
+                            {'attr': {'class': 'field-input-half shadow-sm p-2 mb-1'}}) }}
+                    </div>
+                </div>
+            </div>
+            {{ form_errors(formContact.company) }}
+            <div class="d-flex justify-content-between field-container">
+                {{ form_label(formContact.company, null,
+                    {label: 'Société', 'label_attr': {'class': 'h6 text-center'}}) }}
+                {{ form_widget(formContact.company,
+                    {'attr': {'class': 'field-input shadow-sm p-2 mb-1'}}) }}
+            </div>
+            {{ form_errors(formContact.adress) }}
+            <div class="d-flex justify-content-between field-container">
+                {{ form_label(formContact.adress, null,
+                    {label: 'Adresse', 'label_attr': {'class': 'h6'}}) }}
+                {{ form_widget(formContact.adress,
+                    {'attr': {'class': 'field-input shadow-sm p-2 mb-1'}}) }}
+            </div>
+            {{ form_errors(formContact.postal_code) }}{{ form_errors(formContact.city) }}
+            <div class="d-flex justify-content-between field-container">
+                <div class="col-lg-6 col-12 d-flex justify-content-between field-label">
+                    {{ form_label(formContact.postal_code, null,
+                        {label: 'Code postal', 'label_attr': {'class': 'h6'}}) }}
+                    <div class="field-input-half">
+                        {{ form_widget(formContact.postal_code,
+                            {'attr': {'class': 'field-input-half shadow-sm p-2 mb-1'}}) }}
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12 d-flex justify-content-between field-label ps-lg-5">
+                    {{ form_label(formContact.city, null,
+                        {label: 'Ville', 'label_attr': {'class': 'h6'}}) }}
+                    <div class="field-input-half">
+                        {{ form_widget(formContact.city,
+                            {'attr': {'class': 'field-input-half shadow-sm p-2 mb-1'}}) }}
+                    </div>
+                </div>
+            </div>
+            {{ form_errors(formContact.telephone) }}{{ form_errors(formContact.email) }}
+            <div class="d-flex justify-content-between field-container">
+                <div class="col-lg-6 col-12 d-flex justify-content-between field-label">
+                    {{ form_label(formContact.telephone, null,
+                        {label: 'Téléphone', 'label_attr': {'class': 'h6'}}) }}
+                    <div class="field-input-half">
+                        {{ form_widget(formContact.telephone,
+                            {'attr': {'class': 'field-input-half shadow-sm p-2 mb-1'}}) }}
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12 d-flex justify-content-between field-label ps-lg-5">
+                    {{ form_label(formContact.email, null,
+                        {label: 'Email', 'label_attr': {'class': 'h6'}}) }}
+                    <div class="field-input-half">
+                        {{ form_widget(formContact.email,
+                            {'attr': {'class': 'field-input-half shadow-sm p-2 mb-1'}}) }}
+                    </div>
+                </div>
+            </div>
+            <h2 class="mt-4">Votre bien</h2>
+            {{ form_errors(formContact.type) }}{{ form_errors(formContact.type_other) }}
+            <div class="radio-buttons-container">
+                {{ form_label(formContact.type, null,
+                        {label: 'Le type', 'label_attr': {'class': 'h6' }}) }}
+                <div id="contact_type" class="radio-buttons shadow-sm p-2 mb-1">
+                    {% set i=1 %}
+                    {%- for child in formContact.type %}
+                        {% if i < 3  %}
+                            <div class="contact_type_radio col-lg-2" id="contact_type_radio_{{i}}">
+                                {{- form_widget(child) }}
+                                {{- form_label(child, null,
+                                    {'label_attr': {'class': 'h6'}}) }}
+                            </div>
+                        {% elseif i == 3 %}
+                            <div class="contact_type_radio col-lg-3" id="contact_type_radio_{{i}}">
+                                {{- form_widget(child) }}
+                                {{- form_label(child, null,
+                                    {'label_attr': {'class': 'h6'}}) }}
+                            </div>
+                        {% elseif i == 4 %}
+                            <div class="contact_type_radio col-lg-1" id="contact_type_radio_{{i}}">
+                                {{- form_widget(child) }}
+                                {{- form_label(child, null,
+                                    {'label_attr': {'class': 'h6'}}) }}
+                            </div>
+                        {% endif %}
+                        {% set i=i+1 %}
+                    {% endfor -%}
+                    <div class="contact_type_radio col-lg-4" style="display: none;" id="contact_type_radio_5">
+                        {{ form_widget(formContact.type_other,
+                            {'attr': {'class': 'field-input shadow-sm mb-1 w-100'} }) }}
+                    </div>
+                </div>
+            </div>
+            {{ form_errors(formContact.age) }}{{ form_errors(formContact.age_other) }}
+            <div class="radio-buttons-container">
+                {{ form_label(formContact.age, null,
+                        {label: 'L\'âge', 'label_attr': {'class': 'h6' }}) }}
+                <div id="contact_age" class="radio-buttons shadow-sm p-2 mb-1">
+                    {% set i=1 %}
+                    {%- for child in formContact.age %}
+                        {% if i < 3  %}
+                            <div class="contact_age_radio col-lg-2" id="contact_age_radio_{{i}}">
+                                {{- form_widget(child) }}
+                                {{- form_label(child, null,
+                                    {'label_attr': {'class': 'h6'}}) }}
+                            </div>
+                        {% elseif i == 3 %}
+                            <div class="contact_age_radio col-lg-2 me-4" id="contact_age_radio_{{i}}">
+                                {{- form_widget(child) }}
+                                {{- form_label(child, null,
+                                    {'label_attr': {'class': 'h6'}}) }}
+                            </div>
+                        {% endif %}
+                        {% set i=i+1 %}
+                    {% endfor -%}
+                    <div class="contact_type_radio col-1" style="display: none;" id="contact_age_radio_4">
+                        {{ form_widget(formContact.age_other,
+                            {'attr': {'class': 'field-input shadow-sm mb-1 w-100'} }) }}
+                    </div>
+                </div>
+            </div>
+            {{ form_errors(formContact.youare) }}
+            <div class="radio-buttons-container">
+                {{ form_label(formContact.youare, null,
+                        {label: 'Vous êtes', 'label_attr': {'class': 'h6' }}) }}
+                <div id="contact_youare" class="radio-buttons shadow-sm p-2 mb-1">
+                    {%- for child in formContact.youare %}
+                        <div class ="contact_youare_radio col-lg-2">
+                            {{- form_widget(child) }}
+                            {{- form_label(child, null,
+                                {'label_attr': {'class': 'h6'}}) }}
+                        </div>
+                    {% endfor -%}
+                </div>
+            </div>
+            <h2 class="mt-4">Votre projet de travaux</h2>
+            {{ form_errors(formContact.message) }}
+            <div class="message d-flex justify-content-between field-container">
+                {{ form_label(formContact.message, null,
+                    {label: 'Votre message', 'label_attr': {'class': 'h6'}}) }}
+                {{ form_widget(formContact.message,
+                    {'attr': {'class': 'field-input shadow-sm mb-1'}}) }}
+            </div>
+            <h2 class="mt-4">Quand souhaitez-vous être contacté ?</h2>
+            {{ form_errors(formContact.day) }}
+            <div class="radio-buttons-container">
+                {{ form_label(formContact.day, null,
+                    {label: 'Jour', 'label_attr': {'class': 'h6' }}) }}
+                <div id="contact_day" class="radio-buttons shadow-sm p-2 mb-1">
+                    {%- for child in formContact.day %}
+                        <div class ="contact_youare_radio col-lg-2">
+                            {{- form_widget(child) }}
+                            {{- form_label(child, null,
+                                {'label_attr': {'class': 'h6'}}) }}
+                        </div>
+                    {% endfor -%}
+                </div>
+            </div>
+            <h2 class="mt-4">Comment nous avez-vous connus ?</h2>
+            {{ form_errors(formContact.known) }}{{ form_errors(formContact.known_other) }}
+            <div class="radio-buttons-container">
+                {{ form_label(formContact.known, null,
+                        {label: 'Le type', 'label_attr': {'class': 'h6' }}) }}
+                <div id="contact_known" class="radio-buttons shadow-sm p-2 mb-1 col-lg-12">
+                    {% set i=1 %}
+                    {%- for child in formContact.known %}
+                        {% if i < 4  %}
+                            <div class="contact_known_radio pe-2 col-lg-1" id="contact_known_radio_{{i}}">
+                                {{- form_widget(child) }}
+                                {{- form_label(child, null,
+                                    {'label_attr': {'class': 'h6'}}) }}
+                            </div>
+                        {% elseif i == 4 %}
+                            <div class="contact_known_radio pe-2 col-lg-2" id="contact_known_radio_{{i}}">
+                                {{- form_widget(child) }}
+                                {{- form_label(child, null,
+                                    {'label_attr': {'class': 'h6'}}) }}
+                            </div>
+                        {% elseif i == 5 %}
+                            <div class="contact_known_radio col-lg-1" id="contact_known_radio_{{i}}">
+                                {{- form_widget(child) }}
+                                {{- form_label(child, null,
+                                    {'label_attr': {'class': 'h6'}}) }}
+                            </div>
+                        {% endif %}
+                        {% set i=i+1 %}
+                    {% endfor -%}
+                    <div class="contact_known_radio col-lg-6" style="display: none;" id="contact_known_radio_6">
+                        {{ form_widget(formContact.known_other,
+                            {'attr': {'class': 'field-input shadow-sm mb-1 w-100'} }) }}
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-lg my-3 border-0 rounded-0">Envoyer</button>
+            </div>
+        </div>
+    {{ form_end(formContact) }}
+    <div class="coordinate">
+        <p>Patrice CHAUVIN<br>
+        47, rue des Plantes<br>
+        45750 St PRYVE St MESMIN<br>
+        Port. : 06 70 79 54 69<br>
+        Mail : <a href="mailto:contact@artisansconsult.fr" target="_blank">contact@artisansconsult.fr</a></p>
+        <a href="https://www.facebook.com/Artisans-Consult-472853609451752/" target="_blank">
+            <img src="{{ asset('build/images/Lien-FB.jpg') }}" alt="facebook">
+        </a>
+    </div>
+{% endblock %}

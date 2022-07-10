@@ -1,0 +1,171 @@
+@use "sass:math";
+
+@import 'variables';
+
+.contenti {
+    header {
+        img {
+            width: 100%;
+        }
+
+        .comment {
+            margin-top: -50px;
+            width: 100%;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.438);
+            span {
+                font-size: 35px;
+                letter-spacing: -2px;
+                padding-left: 8px;
+                color: white;
+            }
+        }
+
+        margin-bottom: 8px;
+    }
+    .form-container {
+        #contact_message {
+            height: 100px;
+        }
+        ul {
+            list-style-type: none;
+            display: inline-block;
+            li {
+                color: $danger;
+            }
+        }
+
+        .field-container {
+            display: flex;
+            align-items: center;
+
+            @media screen and (max-width: 992px) {
+                flex-wrap: wrap;
+                width: 100%;
+            }
+
+            label.required:after {
+                content: "*";
+                color: $danger;
+            }
+
+            .field-label {
+                display: flex;
+                align-items: center;
+            }
+
+            label {
+                vertical-align: middle;
+                height: 10px;
+                white-space: nowrap;
+                display: flex;
+                align-items: center;
+            }
+
+            .field-input {
+                width: 85%;
+                padding: 3px !important;
+                @media screen and (max-width: 992px) {
+                    width: 70%;
+                }
+            }
+
+            .field-input-half {
+                width: 70%;
+                input {
+                    padding: 3px !important;
+                    width: 100%;
+                }
+            }
+        }
+
+        .radio-buttons-container {
+            width: 100%;
+            .radio-buttons {
+                white-space: nowrap;
+                width: 100%;
+                height: 35px;
+                padding-right: 0px !important;
+                padding-left: 0px !important;
+                display: flex;
+                align-items: center;
+
+                @media screen and (max-width: 1280px) {
+                    display: block !important;
+                    height: auto;
+                }
+
+                input {
+                    margin-right: 5px;
+                }
+
+                label {
+                    width: 85px;
+                    margin-right: 5px;
+                    margin-bottom: 0px;
+                }
+
+                .contact_type_radio, .contact_age_radio {
+                    display: flex;
+                    align-items: center;
+
+                    @media screen and (max-width: 1280px) {
+                        width: 100%;
+                        height: 25px;
+                    }
+                }
+
+                .contact_known_radio {
+                    display: flex;
+                    align-items: center;
+                    @media screen and (max-width: 1280px) {
+                        width: 100%;
+                        height: 25px;
+                    }
+                }
+
+                .contact_age_label_2 {
+                    width: 170px;
+                }
+            }
+
+            .contact_type_4 {
+                width: 100%;
+            }
+
+            .contact_age_3 {
+                width: 30%;
+            }
+
+            .contact_known_5 {
+                width: 100%;
+            }
+        }
+
+        .btn {
+            background: $secondary;
+            color: $warning;
+            text-align: center;
+            width: 30%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 35px;
+
+            &:hover {
+                color: $white;
+                background: radial-gradient(ellipse at bottom, #fbe500, #fcd000, #fabb00, #f7a700, #f19300);
+            }
+        }
+    }
+
+    .coordinate {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media screen and (min-width: 992px) {
+            display: none;
+        }
+    }
+}

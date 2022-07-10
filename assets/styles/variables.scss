@@ -1,0 +1,30 @@
+@font-face {
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+}
+
+$primary: #0a59a4;
+$secondary: #626157;
+$success: #96bc0d;
+$danger: #dc5828;
+$warning: #f19300;
+$info: #fbe500;
+$light: #cfd0Cb;
+$dark: #000405;
+$white: #ffffff;
+$lightgrey: #a0a098;
+$bggrey: #cfd0cb;
+
+$font-size-p: 1em;
+
+$title-font: 'Roboto', sans-serif;
+
+$left_grey_width: 195px;
+$right_lightGrey_width: 65px;
+
+$pagination-color:                  $secondary;
+$pagination-bg:                     $white;
+
+$pagination-active-color:           $white;
+$pagination-active-bg:              $warning;
+
+$pagination-hover-color:            $warning;
