@@ -2,7 +2,6 @@
 
 ### Create a website for "Artisans Consult" during an internship
 
-
 ---
 
 ### Steps
