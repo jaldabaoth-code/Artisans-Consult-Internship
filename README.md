@@ -64,6 +64,6 @@
 
 ## The Links
 
-<a href="https://github.com/RaphaelBS-WCS/artisansconsult2">Link to the repository of project where we worked during <b>The Internship</b></a>
+<a href="https://github.com/RaphaelBS-WCS/artisansconsult2">Link to the repository of project where we worked during <b>WCS Web Internship</b></a>
 
 <a href="https://www.artisansconsult.fr/">Link to current website of <b>Artisans Consult</b></a>
