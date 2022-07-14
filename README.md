@@ -1,4 +1,4 @@
-<h1>Artisans Consult (The WCS Internship)</h1>
+<h1>Artisans Consult (The WCS Internship, WCS Web PHP)</h1>
 
 ### Create a website for "Artisans Consult" during an internship
 
