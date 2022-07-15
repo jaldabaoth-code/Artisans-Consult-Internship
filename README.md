@@ -1,6 +1,6 @@
 <h1>Artisans Consult (The WCS Internship, WCS Web PHP)</h1>
 
-### Create a website for "Artisans Consult" during an internship
+### Create a website for "Artisans Consult" during an internship  by using Symfony
 
 
 ---
