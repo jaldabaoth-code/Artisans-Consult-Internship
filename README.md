@@ -15,7 +15,7 @@
 4. Copy the `.env` file, name it `.env.local` and fill all informations (Database, Symfony/Mailer)
     - MAILER_DSN=smtp://xxx<br/>
         * "Retrieve and copy MAILER_DSN from : <a href="https://mailtrap.io/inboxes">MAILTRAP</a>
-        * Then you go to : -> <b>My Inbox</b> -> <b>SMTP Settings</b> -> <b>Integrations</b> -> <b>Symfony 5+</b>
+        * Then you go to : -> <b>My Inbox</b> -> <b>SMTP Settings</b> -> <b>Integrations</b> -> <b>PHP</b> -> <b>Symfony 5+</b>
 5. Run `composer install` to install PHP dependencies
 6. Run `yarn install` to install JS dependencies
 7. Run `symfony console doctrine:database:create` to create database
