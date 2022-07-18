@@ -9,7 +9,7 @@
 
 ![Artisansconsult](https://i.ibb.co/SxY5Jyr/artisansconsult.png)
 
-1. Clone the repo from Github : `git clone git@github.com:jaldabaoth-code/Artisans-Consult-Internship.git`
+1. Clone the repo from GitHub : `git clone git@github.com:jaldabaoth-code/Artisans-Consult-Internship.git`
 2. Enter the directory : `cd Artisans-Consult-Internship`
 3. Open the project with your code editor
 4. Copy the `.env` file, name it `.env.local` and fill all informations (Database, Symfony/Mailer)
