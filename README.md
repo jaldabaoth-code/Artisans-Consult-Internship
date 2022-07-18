@@ -23,7 +23,7 @@
 9. Run `symfony console doctrine:fixtures:load` to load the fixtures in database
 10. Run `yarn encore dev` to build assets
 11. Run `symfony server:start` to launch symfony server
-12. Go to <b>localhost:8000</b> on your browser
+12. Go to <b>localhost:8000</b> with your favorite browser
 13. If <b>localhost:8000</b> Show :<br/>
     <i>This site can't be reached
 
