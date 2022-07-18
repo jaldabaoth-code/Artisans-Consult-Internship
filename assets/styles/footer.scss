@@ -16,7 +16,6 @@
     background: white;
     opacity: 1;
     z-index: 30;
-
     @media screen and (max-width: 992px) {
         width: 94%;
         left: 32px;
@@ -31,13 +30,12 @@
         margin: 0;
         padding: 0;
         list-style-type: none;
-
     }
 
-    .footer-item{
+    .footer-item {
         border-right: 1px solid white;
         width: 100%;
-        .footer-link{
+        .footer-link {
             display: flex;
             justify-content: center;
             align-self: center;
@@ -48,9 +46,7 @@
             height: 27px;
             color: white;
             width: 100%;
-
             text-decoration: none;
-
             &:hover, &.active {
                 color: $white;
                 background: radial-gradient(ellipse at bottom, #fbe500, #fcd000, #fabb00, #f7a700, #f19300);

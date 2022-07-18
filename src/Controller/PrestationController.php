@@ -13,8 +13,6 @@ class PrestationController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('prestation/index.html.twig', [
-            'controller_name' => 'PrestationController',
-        ]);
+        return $this->render('prestation/index.html.twig', ['controller_name' => 'PrestationController',]);
     }
 }

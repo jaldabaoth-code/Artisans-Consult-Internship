@@ -17,8 +17,6 @@ class PartnerController extends AbstractController
         $partners = $partnerRepository->findBy([
             'category' => 'private'
         ]);
-        return $this->render('partner/index.html.twig', [
-            'partners' => $partners,
-        ]);
+        return $this->render('partner/index.html.twig', ['partners' => $partners,]);
     }
 }

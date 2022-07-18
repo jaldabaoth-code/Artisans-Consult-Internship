@@ -13,8 +13,6 @@ class LegalController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('legal/index.html.twig', [
-            'controller_name' => 'LegalController',
-        ]);
+        return $this->render('legal/index.html.twig', ['controller_name' => 'LegalController',]);
     }
 }

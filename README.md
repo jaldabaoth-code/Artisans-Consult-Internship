@@ -9,9 +9,9 @@
 
 ![Artisansconsult](https://i.ibb.co/SxY5Jyr/artisansconsult.png)
 
-1. Clone the project from [Github](https://github.com/jaldabaoth-code/Artisans-Consult-Stage)
-2. Go in the project folder
-3. Open with your code editor
+1. Clone the repo from Github : `git clone git@github.com:jaldabaoth-code/Artisans-Consult-Internship.git`
+2. Enter the directory : `cd Artisans-Consult-Internship`
+3. Open the project with your code editor
 4. Copy the `.env` file, name it `.env.local` and fill all informations (Database, Symfony/Mailer)
     - MAILER_DSN=smtp://xxx<br/>
         * "Retrieve and copy MAILER_DSN from : <a href="https://mailtrap.io/inboxes">MAILTRAP</a>

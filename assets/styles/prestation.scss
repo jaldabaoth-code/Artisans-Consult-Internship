@@ -4,7 +4,6 @@
 
 .contenti {
     header {
-
         img {
             width: 100%;
         }
@@ -27,7 +26,6 @@
     #prestation {
         display: flex;
         flex-direction: column;
-
         .hook {
             width: 100%;
             font-size: 24px;
@@ -45,7 +43,6 @@
             grid-template-rows: 1fr;
             grid-column-gap: 12px;
             border: 1px solid rgba(0, 0, 0, 0.125);
-
             @media screen and (max-width: 992px) {
                 grid-template-columns: 1fr;
                 grid-template-rows: repeat(2, 1fr);
@@ -56,7 +53,6 @@
                 flex-direction: column;
                 grid-column-start: 1;
                 grid-column-end: 1;
-
                 img {
                     margin-top: -45px;
                     width: 60%;
@@ -79,14 +75,12 @@
             .graphic {
                 grid-column-start: 2;
                 grid-column-end: span 3;
-
+                display: flex;
+                flex-direction: column;
                 @media screen and (max-width: 992px) {
                     grid-row-start: 2;
                     grid-column-end: 1;
                 }
-
-                display: flex;
-                flex-direction: column;
 
                 img {
                     margin-top: 18px !important;
@@ -96,6 +90,4 @@
             }
         }
     }
-
-
 }

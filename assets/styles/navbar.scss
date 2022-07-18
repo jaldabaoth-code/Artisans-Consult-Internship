@@ -13,7 +13,7 @@
 }
 
 .navbar {
-    background-color:#ececee;
+    background-color: #ececee;
     background-image: url(../images/backgroundHeaderAndLogo.jpg);
     background-clip: border-box;
     background-origin: border-box;
@@ -27,27 +27,22 @@
     top: 0px;
     left: 0px;
     z-index: 30;
-
+    display: flex;
+    justify-content: space-evenly;
     .navbar-toggler {
         position: fixed;
         top: 42px;
         right: 5px;
         font-size: 50px;
-        &:focus,
-        &:active,
-        .fas {
+        &:focus, &:active, .fas {
             box-shadow: none;
             outline: none;
-
             &:focus {
                 box-shadow: none;
                 outline: none;
             }
         }
     }
-
-    display: flex;
-    justify-content: space-evenly;
     
     .container-fluid {
         align-items: unset;
@@ -61,7 +56,6 @@
         align-items: unset;
         margin-top: 105px;
         width: 100%;
-
         @media screen and (max-width: 992px) {
             margin-top: 140px;
         }
@@ -76,14 +70,12 @@
         position: relative;
         top: 0px;
         left: 0px;
-
         .nav-items {
             display: flex;
             justify-content: space-between;
             width: 100%;
             margin-right: 8px;
             margin-left: 8px;
-
             @media screen and (max-width: 992px) {
                 height: 60vh;
                 width: 97vw !important;
@@ -108,9 +100,8 @@
             align-items: center;
         }
 
-        .nav-item{
+        .nav-item {
             width: 100%;
-            
             .nav-link{
                 background: $secondary;
                 height: 27px;
@@ -120,11 +111,11 @@
                 align-items: center;
                 justify-content: center;
                 width: 100%;
-
                 &:hover, &.active {
                     color: $white;
                     background: radial-gradient(ellipse at bottom, #fbe500, #fcd000, #fabb00, #f7a700, #f19300);
                 }
+
                 @media screen and (max-width: 992px) {
                     background: $secondary !important;
                     width: 97vw;
@@ -139,8 +130,9 @@
                 &:hover {
                     background: $secondary;
                 }
+
                 @media screen and (max-width: 992px) {
-                    display:none !important;
+                    display: none !important;
                 }
             }
 
@@ -150,8 +142,9 @@
                 &:hover {
                     background: $lightgrey;
                 }
+
                 @media screen and (max-width: 992px) {
-                    display:none !important;
+                    display: none !important;
                 }
             }
         }

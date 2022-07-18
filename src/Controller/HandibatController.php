@@ -13,8 +13,6 @@ class HandibatController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('handibat/index.html.twig', [
-            'controller_name' => 'HandibatController',
-        ]);
+        return $this->render('handibat/index.html.twig', ['controller_name' => 'HandibatController',]);
     }
 }

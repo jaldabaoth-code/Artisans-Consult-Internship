@@ -17,8 +17,6 @@ class InfoController extends AbstractController
         $partners = $partnerRepository->findBy([
             'category' => 'public'
         ]);
-        return $this->render('info/index.html.twig', [
-            'partners' => $partners,
-        ]);
+        return $this->render('info/index.html.twig', ['partners' => $partners,]);
     }
 }

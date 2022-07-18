@@ -20,7 +20,6 @@ class AchievmentRepository extends ServiceEntityRepository
     }
 
     /*
-     * 
      * @Return void
      */
     public function getPaginatedAchievment($page, $limit)
@@ -34,7 +33,6 @@ class AchievmentRepository extends ServiceEntityRepository
     }
 
     /*
-     * 
      * @Return void
      */
     public function getTotalAchievment()

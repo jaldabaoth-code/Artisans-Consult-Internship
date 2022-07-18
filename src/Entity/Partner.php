@@ -153,7 +153,7 @@ class Partner
     public function setLogoFile($logoFile)
     {
         $this->logoFile = $logoFile;
-        if ($logoFile){
+        if ($logoFile) {
             $this->updateAt = new DateTime();
         }
         return $this;
